@@ -213,16 +213,17 @@ function sortCarInventory(inventory_array) {
   }
   // sort the array of car_models
   let sorted_models = models.sort();
+  
   let sorted_by_model =[];
   while (sorted_models.length > 0) {
-    let next_model = (sorted_models.shift());
+    var next_model = (sorted_models.shift());
     for (let i = 0; i < inventory_array.length; i++) {
       if (inventory_array[i].car_model === next_model) {
         sorted_by_model.push(inventory_array[i]);
       }
     }
   }
-
+  return sorted_by_model;
 }
 
 /**
